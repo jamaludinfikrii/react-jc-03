@@ -19,3 +19,4 @@
     // State
         // Data di dalam komponent
         // Tiap Kali di update, component re-render
+        // Conditional Rendering
