@@ -13,3 +13,9 @@
 // Components // segala sesuatu yang menghasilkan jsx
     // Functional Component
     // Class Component
+
+
+// State And Props (data management)
+    // State
+        // Data di dalam komponent
+        // Tiap Kali di update, component re-render
