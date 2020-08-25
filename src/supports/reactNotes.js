@@ -20,3 +20,10 @@
         // Data di dalam komponent
         // Tiap Kali di update, component re-render
         // Conditional Rendering
+    // Props 
+        // Transfer data antar komponent
+        // Parent ==> Child
+        // Biar komponen dinamis
+
+// Routing
+    // npm install react-router-dom

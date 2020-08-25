@@ -1,8 +1,10 @@
 import React from 'react'
 // react hooks
-function Button (){
+
+function Button (props){
     return(
-        <input  type='button' value='click' />
+        <input style={{backgroundColor:props.color,borderColor:props.borderColor}} type='button' 
+        value={props.title}/>
     )
 }
 
