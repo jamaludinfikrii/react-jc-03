@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './components/Button.jsx'
-import Input from './components/Input.jsx';
+import Navbar from './components/Navbar'
+import PageNotFound from './components/PageNotFound'
 import State2 from './State2'
 import State3 from './State3'
 import State4 from './State4'
@@ -21,17 +21,13 @@ class App extends React.Component{
     return(
       <BrowserRouter>
         <div>
-          <h1>Welcome</h1>
-          <div>
-            <Link to='state-2'>state 2</Link>
-            <Link to='state-3'>state 3</Link>
-            <Link to='state-4'>state 4</Link>
-          </div>
-          <br/>
-          <br/>
-          <br/>
-
+         
+          <Navbar />
           <Switch>
+            <Route exact path='/'>
+              <h1>Welcome</h1>
+            </Route>
+  
             <Route path='/state-2'>
               <State2/>
             </Route>
@@ -39,7 +35,10 @@ class App extends React.Component{
               <State3 />
             </Route>
             <Route path='/state-4' component={State4} />
+            <Route path='*' component={PageNotFound} />
+
           </Switch>
+
 
 
         </div>
