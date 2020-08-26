@@ -10,6 +10,7 @@ function Navbar(){
             <Link to='state-4'>state 4</Link>
             <Link to='fetch-data'>Fetch Data</Link>
             <Link to='cat'>Cat Facts</Link>
+            <Link to='lifecycle'>Lifecycle</Link>
         </div>
     )
 }

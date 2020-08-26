@@ -59,4 +59,9 @@ class CatFacts extends Component {
     }
 }
 
+
+
+// render jalan dengan state masih null (loading) ==> comdidmount jalan untuk setState data dari null menjadi array of object 
+// ==> karena ada perubahan state, maka render jalan ulang dengan data tidak nul
+
 export default CatFacts
