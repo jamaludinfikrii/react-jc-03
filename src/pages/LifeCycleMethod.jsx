@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 
 class LifeCycleMethod extends Component {
-    constructor(){
-        super()
-        alert('ini constructor')
-    }
 
     componentDidMount(){
         alert('CompDidMount')
@@ -14,10 +10,6 @@ class LifeCycleMethod extends Component {
     // updating => compdidupdate // kalau ada perubahan state
     // unmounting => componentWillUnmount // ketika komponent gak muncul di layar / mati / destroy
 
-
-    static getDerivedStateFromProps (){
-        alert('getDerivedStateFromProps')
-    }
     
     render() {
         alert('render')
