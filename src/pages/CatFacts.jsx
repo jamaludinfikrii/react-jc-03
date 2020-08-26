@@ -8,6 +8,10 @@ class CatFacts extends Component {
         data : null
     }
 
+    componentDidMount(){
+        this.onGetDataCat()
+    }
+
     onGetDataCat = () => {
         Axios.get(linkApi)
         .then((res) => {
@@ -17,13 +21,29 @@ class CatFacts extends Component {
             console.log(err)
         })
     }
+
+    mapDataCat = () => {
+        return this.state.data.map((val,index) => {
+            return(
+                <div key={index} style={{marginBottom:'10px'}}>
+                    <div style={{fontWeight:'bold'}}>
+                        {val.text || 'null'}
+                    </div>
+
+                    <span style={{fontSize:'10px'}}> 
+                        " {val.user ? val.user.name.first + ' ' + val.user.name.last : 'unknown'} "
+                    </span>
+                    <button disabled>{val.upvotes ? val.upvotes + " upvotes"  : 'none'}</button>
+                </div>
+            )
+        })
+    }
     
     render() {
         if(this.state.data === null){
             return (
                 <div>
-                    <h1>Cat Facts</h1>
-                    <input type='button' value='get data cats' onClick={this.onGetDataCat} />
+                    <h1>Loading ....</h1>
                 </div>
             )
         }
@@ -32,20 +52,7 @@ class CatFacts extends Component {
             <div>
                 <h1>Facts Data</h1>
                 {
-                    this.state.data.map((val) => {
-                        return(
-                            <div style={{marginBottom:'10px'}}>
-                                <div style={{fontWeight:'bold'}}>
-                                    {val.text || 'null'}
-                                </div>
-
-                                <span style={{fontSize:'10px'}}> 
-                                    " {val.user ? val.user.name.first + ' ' + val.user.name.last : 'unknown'} "
-                                </span>
-                                <button disabled>{val.upvotes + 'upvotes' || '0' + 'upvotes'}</button>
-                            </div>
-                        )
-                    })
+                    this.mapDataCat()
                 }
             </div>
         )
