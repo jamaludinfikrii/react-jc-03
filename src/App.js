@@ -6,6 +6,7 @@ import State3 from './pages/State3.jsx'
 import State4 from './pages/State4.jsx'
 import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import LatihanFetchData from './pages/LatihanFetchData';
+import CatFacts from './pages/CatFacts';
 
 
 
@@ -39,6 +40,7 @@ class App extends React.Component{
             <Route path='/fetch-data'>
               <LatihanFetchData />
             </Route>
+            <Route path='/cat' component={CatFacts} />
             <Route path='*' component={PageNotFound} />
 
           </Switch>
