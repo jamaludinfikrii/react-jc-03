@@ -1,0 +1,7 @@
+{
+    "users" : [
+        {"id" : 1 , "username" : "fikri","password" : "123123","email":"fikri@fikri.com"},
+        {"id" : 2 , "username" : "budi","password" : "asdfasdf","email":"budi@fikri.com"},
+        {"id" : 1 , "username" : "seto","password" : "123qwe","email":"seto@fikri.com"}
+    ]
+}
