@@ -2,6 +2,8 @@
     "users" : [
         {"id" : 1 , "username" : "fikri","password" : "123123","email":"fikri@fikri.com"},
         {"id" : 2 , "username" : "budi","password" : "asdfasdf","email":"budi@fikri.com"},
-        {"id" : 1 , "username" : "seto","password" : "123qwe","email":"seto@fikri.com"}
+        {"id" : 3 , "username" : "seto","password" : "123qwe","email":"seto@fikri.com"},
+        {"id" : 4 , "username" : "Andi","password" : "qwerty","email":"andi@fikri.com"},
+        {"id" : 5 , "username" : "Heru","password" : "qwerty","email":"heru@fikri.com"}
     ]
 }

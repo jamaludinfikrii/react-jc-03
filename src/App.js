@@ -8,6 +8,7 @@ import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import LatihanFetchData from './pages/LatihanFetchData';
 import CatFacts from './pages/CatFacts';
 import LifeCycleMethod from './pages/LifeCycleMethod';
+import UserData from './pages/UserData';
 
 
 
@@ -43,6 +44,7 @@ class App extends React.Component{
             </Route>
             <Route path='/cat' component={CatFacts} />
             <Route path='/lifecycle' component={LifeCycleMethod} />
+            <Route path='/user' component={UserData} />
             <Route path='*' component={PageNotFound} />
 
           </Switch>

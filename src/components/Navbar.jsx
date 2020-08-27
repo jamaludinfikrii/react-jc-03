@@ -11,6 +11,7 @@ function Navbar(){
             <Link to='fetch-data'>Fetch Data</Link>
             <Link to='cat'>Cat Facts</Link>
             <Link to='lifecycle'>Lifecycle</Link>
+            <Link to='user'>User Data</Link>
         </div>
     )
 }
