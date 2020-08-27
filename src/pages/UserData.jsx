@@ -38,6 +38,38 @@ class UserData extends Component {
         })
     }
 
+    onSubmitClick = () => {
+        // pertama ambil semua value dari inputs
+        var username = this.refs.username.value
+        var email = this.refs.email.value
+        var password = this.refs.password.value
+
+        // cek ada yang kosong atau enggak
+        if(username && email && password){
+            // kirim ke api
+            Axios.post(apiUrl, {username : username, email : email,password : password})
+            .then((res) => {
+                console.log(res)
+                if(res.status === 201){
+                    alert('Add Data Success')
+                    this.refs.username.value = ''
+                    this.refs.email.value = ''
+                    this.refs.password.value = ''
+                    this.getData()
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            
+        }else{
+            alert('Form Harus diisi Semuanya')
+        }
+
+        
+    }
+
+
 
     render() {
         if(this.state.data === null){
@@ -74,10 +106,10 @@ class UserData extends Component {
                             <div className="col-md-6">
                                 <div className="card">
                                     <div className="card-body">
-                                        <input type="text" placeholder='Enter Username' className='form-control'/>
-                                        <input type="text" placeholder='Enter Email' className='form-control my-3'/>
-                                        <input type="password" placeholder='Enter Your Password' className='form-control'/>
-                                        <input type="button" value="Submit" className='btn btn-info mt-4'/>
+                                        <input type="text" placeholder='Enter Username' ref='username' className='form-control'/>
+                                        <input type="text" placeholder='Enter Email' ref='email' className='form-control my-3'/>
+                                        <input type="password" placeholder='Enter Your Password' ref='password' className='form-control'/>
+                                        <input type="button" value="Submit" onClick={this.onSubmitClick} className='btn btn-info mt-4'/>
                                         <input type="button" onClick={ () => this.setState({showForm : false})} value="Close Form" className='btn btn-danger mt-4'/>
                                     </div>
                                 </div>

@@ -1,9 +1,52 @@
 {
-    "users" : [
-        {"id" : 1 , "username" : "fikri","password" : "123123","email":"fikri@fikri.com"},
-        {"id" : 2 , "username" : "budi","password" : "asdfasdf","email":"budi@fikri.com"},
-        {"id" : 3 , "username" : "seto","password" : "123qwe","email":"seto@fikri.com"},
-        {"id" : 4 , "username" : "Andi","password" : "qwerty","email":"andi@fikri.com"},
-        {"id" : 5 , "username" : "Heru","password" : "qwerty","email":"heru@fikri.com"}
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "fikri",
+      "password": "123123",
+      "email": "fikri@fikri.com"
+    },
+    {
+      "id": 2,
+      "username": "budi",
+      "password": "asdfasdf",
+      "email": "budi@fikri.com"
+    },
+    {
+      "id": 3,
+      "username": "seto",
+      "password": "123qwe",
+      "email": "seto@fikri.com"
+    },
+    {
+      "id": 4,
+      "username": "Andi",
+      "password": "qwerty",
+      "email": "andi@fikri.com"
+    },
+    {
+      "id": 5,
+      "username": "Heru",
+      "password": "qwerty",
+      "email": "heru@fikri.com"
+    },
+    {
+      "username": "susilo",
+      "email": "susilo@fikri.com",
+      "password": "123123",
+      "id": 6
+    },
+    {
+      "username": "gino",
+      "email": "gino@gmial.com",
+      "password": "234234",
+      "id": 7
+    },
+    {
+      "username": "gina",
+      "email": "gina@gmail.com",
+      "password": "123123",
+      "id": 8
+    }
+  ]
 }
