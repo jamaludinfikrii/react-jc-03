@@ -47,6 +47,12 @@
       "email": "gina@gmail.com",
       "password": "123123",
       "id": 8
+    },
+    {
+      "username": "koko",
+      "email": "koko",
+      "password": "koko",
+      "id": 9
     }
   ]
 }

@@ -6,7 +6,8 @@ const apiUrl = 'http://localhost:2000/users'
 class UserData extends Component {
     state = {
         data : null,
-        showForm : true
+        showForm : false,
+        selectedId : null
     }
 
     componentDidMount(){
@@ -26,14 +27,27 @@ class UserData extends Component {
 
     mapData = () => {
         return this.state.data.map((val) => {
+            if(this.state.selectedId === val.id){
+                return(
+                    <tr key={val.id}>
+                        <td>{val.id}</td>
+                        <td><input type="text" className='form-control' defaultValue={val.username}/></td>
+                        <td><input type="text" className='form-control' defaultValue={val.email}/></td>
+                        <td><input type='button' value='cancel' onClick={() => this.setState({selectedId : null})} className='btn btn-danger'/></td>
+                        <td><input type='button' value='save' className='btn btn-success'/></td>
+                    </tr>
+                )
+            }
             return(
                 <tr key={val.id}>
                     <td>{val.id}</td>
                     <td>{val.username}</td>
                     <td>{val.email}</td>
                     <td><input type='button' value='delete' className='btn btn-danger'/></td>
-                    <td><input type='button' value='edit' className='btn btn-info'/></td>
+                    <td><input type='button' value='edit' onClick={() => this.setState({selectedId : val.id})} className='btn btn-info'/></td>
                 </tr>
+                
+               
             )
         })
     }
@@ -42,12 +56,12 @@ class UserData extends Component {
         // pertama ambil semua value dari inputs
         var username = this.refs.username.value
         var email = this.refs.email.value
-        var password = this.refs.password.value
+        var passwordInput = this.refs.password.value
 
         // cek ada yang kosong atau enggak
-        if(username && email && password){
+        if(username && email && passwordInput){
             // kirim ke api
-            Axios.post(apiUrl, {username : username, email : email,password : password})
+            Axios.post(apiUrl, {username,email,password : passwordInput})
             .then((res) => {
                 console.log(res)
                 if(res.status === 201){
@@ -68,6 +82,8 @@ class UserData extends Component {
 
         
     }
+
+
 
 
 
