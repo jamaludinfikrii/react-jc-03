@@ -31,10 +31,10 @@ class UserData extends Component {
                 return(
                     <tr key={val.id}>
                         <td>{val.id}</td>
-                        <td><input type="text" className='form-control' defaultValue={val.username}/></td>
-                        <td><input type="text" className='form-control' defaultValue={val.email}/></td>
+                        <td><input type="text" className='form-control' ref='usernameEdit' defaultValue={val.username}/></td>
+                        <td><input type="text" className='form-control' ref='emailEdit' defaultValue={val.email}/></td>
                         <td><input type='button' value='cancel' onClick={() => this.setState({selectedId : null})} className='btn btn-danger'/></td>
-                        <td><input type='button' value='save' className='btn btn-success'/></td>
+                        <td><input type='button' value='save' onClick={this.onSaveBtnClick} className='btn btn-success'/></td>
                     </tr>
                 )
             }
@@ -81,6 +81,33 @@ class UserData extends Component {
         }
 
         
+    }
+
+    
+
+    onSaveBtnClick = () => {
+        // get value from inputs
+        var usernameEdit = this.refs.usernameEdit.value
+        var emailEdit = this.refs.emailEdit.value
+
+        // check empty value
+        if(usernameEdit && emailEdit){
+            Axios.patch(apiUrl + '/' +  this.state.selectedId , {username : usernameEdit , email : emailEdit})
+            .then((res) => {
+                console.log(res)
+                if(res.status === 200){
+                    alert('Edit Data Success')
+                    this.setState({selectedId : null})
+                    this.getData()
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            // send to api
+        }else{
+            alert('Form Gak boleh kosong')
+        }
     }
 
 

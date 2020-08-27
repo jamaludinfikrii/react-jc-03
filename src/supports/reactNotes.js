@@ -27,3 +27,11 @@
 
 // Routing
     // npm install react-router-dom
+
+// JSON SERVER
+    // Get
+    // Post
+    // Put VS PATCH  ==> (Edit)
+        // rest api = {username : fikri, password: 123, email:fikri@fikri.com}
+        // axios.put(api,{username : andi}) ==> {username : andi , password : null, email : null}
+        // axios.patch(api,{username : andi}) ==> {username : andi , password L 123 , email : fikri@fikri.com}
