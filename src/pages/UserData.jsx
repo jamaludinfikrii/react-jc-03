@@ -43,7 +43,7 @@ class UserData extends Component {
                     <td>{val.id}</td>
                     <td>{val.username}</td>
                     <td>{val.email}</td>
-                    <td><input type='button' value='delete' className='btn btn-danger'/></td>
+                    <td><input type='button' value='delete' onClick={() => this.onDeleteClick(val.id)} className='btn btn-danger'/></td>
                     <td><input type='button' value='edit' onClick={() => this.setState({selectedId : val.id})} className='btn btn-info'/></td>
                 </tr>
                 
@@ -52,6 +52,27 @@ class UserData extends Component {
         })
     }
 
+    onDeleteClick = (id) => {
+        // get id to delete
+        // send id to api
+
+        var konfirmasi = window.confirm("Are You Sure Want to Delete this data???")
+
+        if(konfirmasi){
+            Axios.delete(apiUrl + '/' + id)
+            .then((res) => {
+                console.log(res)
+                if(res.status === 200){
+                    alert('Delete data sucess')
+                    this.getData()
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+
+    }
     onSubmitClick = () => {
         // pertama ambil semua value dari inputs
         var username = this.refs.username.value
